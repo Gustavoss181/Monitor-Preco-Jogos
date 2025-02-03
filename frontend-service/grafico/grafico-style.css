@@ -1,47 +1,61 @@
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
 }
 
 #grafico {
     text-align: center;
-    width: 100%;
-    max-width: 80%;
+    width: 90%;
+    max-width: 800px;
     padding: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    background-color:  #abc0e3;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 a.button {
     display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 12px 25px;
+    font-size: 18px;
     font-weight: bold;
-    background: linear-gradient(to right, #415960, #8ca0a6, #415960);
+    background: linear-gradient(90deg, #ff7eb3, #ff758c);
     color: white;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    border-radius: 6px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 a.button:hover {
-    background: linear-gradient(to right, white, #9c9e9f);
-    color: black;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 120, 150, 0.4);
 }
 
 a.button:active {
-    background-color: #004085; /* Cor de fundo ao clicar */
-    border-color: #004085; /* Altera a cor da borda ao clicar */
+    transform: scale(0.98);
 }
 
-a.button:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(38, 143, 255, 0.5); /* Destaca o botão quando ele está focado */
+canvas {
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+/* Ajuste para melhorar a visibilidade das labels do gráfico */
+.chartjs-render-monitor {
+    color: white !important;
+    font-size: 14px;
+    font-weight: bold;
 }

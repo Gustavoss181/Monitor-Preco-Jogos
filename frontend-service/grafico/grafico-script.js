@@ -49,18 +49,44 @@ function updateChart(chart, data) {
 window.onload = async () => {
 	const ctx = document.getElementById('myChart').getContext('2d');
 	const myChart = new Chart(ctx, {
-	type: 'line',
-	data: {
-		labels: [],
-		datasets: []
-	},
-	options: {
-		scales: {
-			y: {
-				beginAtZero: true
+		type: 'line',
+		data: {
+			labels: [],
+			datasets: []
+		},
+		options: {
+			scales: {
+				x: {
+					ticks: {
+						color: 'white', // Define a cor das labels do eixo X
+						font: {
+							size: 14, // Aumenta o tamanho da fonte
+							weight: 'bold'
+						}
+					}
+				},
+				y: {
+					ticks: {
+						beginAtZero: true,
+						color: 'white', // Define a cor das labels do eixo Y
+						font: {
+							size: 14,
+							weight: 'bold'
+						}
+					}
+				}
+			},
+			plugins: {
+				legend: {
+					labels: {
+						color: 'white', // Define a cor da legenda
+						font: {
+							size: 16
+						}
+					}
+				}
 			}
 		}
-	}
 	});
 
 	updateChart(myChart, await fetchData());
